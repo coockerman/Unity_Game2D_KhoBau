@@ -28,6 +28,7 @@ public class CharacterMove : MonoBehaviour
     {
         return transform.position;
     }
+    //Xử lý di chuyển
     private void HandleMovement()
     {
         if (pathVectorList != null)
@@ -55,7 +56,7 @@ public class CharacterMove : MonoBehaviour
         {
         }
     }
-
+    //Dừng lại
     private void StopMoving()
     {
         pathVectorList = null;
@@ -65,7 +66,7 @@ public class CharacterMove : MonoBehaviour
     {
         return transform.position;
     }
-
+    //Tìm đường đi cho nhân vật và gán đường đi đó vào pathVectorList
     public void SetTargetPosition(Vector3 targetPosition)
     {
         currentPathIndex = 0;

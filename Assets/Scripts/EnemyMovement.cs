@@ -22,6 +22,7 @@ public class EnemyMovement : MonoBehaviour
         }
         UpdateGrid();
     }
+    //Tìm đường đi mới cho enemy 
     void UpdateGrid()
     {
         currentPathIndex = 0;
@@ -37,6 +38,7 @@ public class EnemyMovement : MonoBehaviour
     }
     private void Update()
     {
+        //Nếu pathVectorList khác null thì enemy di chuyển
         if (pathVectorList != null)
         {
             Vector3 targetPosition = pathVectorList[currentPathIndex];
@@ -59,6 +61,7 @@ public class EnemyMovement : MonoBehaviour
             }
         }
     }
+    //Chuyển đổi đường đi từ lưới sang toạ độ thực
     void convertPathNodeToVt3()
     {
         if (pathNodeList[0] == null) return;
@@ -69,6 +72,7 @@ public class EnemyMovement : MonoBehaviour
         pathNodeList.Remove(pt);
         pathVectorList.Add(vt3);
     }
+    //dừng lại
     private void StopMoving()
     {
         Debug.Log("abcdef");

@@ -16,6 +16,7 @@ public class Grid<TGridObject> {
     private int height;
     private float cellSize;
     private Vector3 originPosition;
+    // Mảng 2 chiều
     private TGridObject[,] gridArray;
 
     public Grid(int width, int height, float cellSize, Vector3 originPosition, Func<Grid<TGridObject>, int, int, TGridObject> createGridObject) {
@@ -23,7 +24,7 @@ public class Grid<TGridObject> {
         this.height = height;
         this.cellSize = cellSize;
         this.originPosition = originPosition;
-
+        //Khởi tạo mảng 2 chiều
         gridArray = new TGridObject[width, height];
 
         for (int x = 0; x < gridArray.GetLength(0); x++) {
@@ -32,7 +33,7 @@ public class Grid<TGridObject> {
             }
         }
     }
-
+    //Lấy giá trị các thuộc tính
     public int GetWidth() {
         return width;
     }

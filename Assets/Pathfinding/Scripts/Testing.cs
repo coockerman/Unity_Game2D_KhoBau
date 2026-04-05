@@ -11,10 +11,10 @@ public class Testing : MonoBehaviour {
     Vector3 endPoint;
     List<PathNode> path;
     bool isDraw = true;
+    //2 giá trị độ dài của lưới
     [SerializeField] int heightGrid = 10;
     [SerializeField] int widthGrid = 20;
     public LineRenderer lineRenderer;
-    //Vector3 mouseWorldPosition;
 
     private void Start() {
         pathfinding = new Pathfinding(widthGrid, heightGrid);
@@ -46,6 +46,7 @@ public class Testing : MonoBehaviour {
         characterMove.SetTargetPosition(endPoint);
 
     }
+    //Vẽ đường đi
     void drawLine()
     {
         if (!isDraw || characterMove.MoveDir == Vector3.zero)
